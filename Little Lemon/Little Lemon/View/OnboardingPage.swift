@@ -18,17 +18,48 @@ struct OnboardingPage: View {
     @State private var invalidInputAlert: Bool = false
     
     var body: some View {
-        VStack {
-            TextField("First Name", text: $firstName)
-            TextField("Last Name", text: $lastName)
-            TextField("Email ", text: $email)
-            Button(action: verifyDetails, label: {
-                Text("Register")
-            })
-            .alert("Invalid Input", isPresented: $invalidInputAlert) {
-                Button("OK", role: .cancel) { }
+            VStack {
+                Image(.littleLemonLogoTitle)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 500, height: 300)
+                Text("Welcome to Little Lemon Restaurant")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text("Please Sign Up below")
+                    .font(.subheadline)
+                    .padding(.top, 30)
+                TextField("First Name", text: $firstName)
+                    .font(.system(size: 17, weight: .thin))
+                    .frame(height: 44)
+                    .padding(.horizontal, 12)
+                    .background(Color.white)
+                    .cornerRadius(4.0)
+                TextField("Last Name", text: $lastName)
+                    .font(.system(size: 17, weight: .thin))
+                    .frame(height: 44)
+                    .padding(.horizontal, 12)
+                    .background(Color.white)
+                    .cornerRadius(4.0)
+                TextField("Email ", text: $email)
+                    .font(.system(size: 17, weight: .thin))
+                    .frame(height: 44)
+                    .padding(.horizontal, 12)
+                    .background(Color.white)
+                    .cornerRadius(4.0)
+                Button(action: verifyDetails, label: {
+                    Text("Register")
+                })
+                .alert("Invalid Input", isPresented: $invalidInputAlert) {
+                    Button("OK", role: .cancel) { }
+                }
+                .padding()
+                .padding([.leading, .trailing], 50)
+                .background(.yellow)
+                .cornerRadius(100)
+                Spacer()
             }
-        }
+            .padding([.leading, .trailing])
     }
     
     func verifyDetails() -> Void {
