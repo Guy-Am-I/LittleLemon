@@ -68,9 +68,7 @@ struct OnboardingPage: View {
             }
             .padding([.leading, .trailing])
             .onAppear() {
-                if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
-                    isLoggedIn = true
-                }
+                isLoggedIn = UserDefaults.standard.bool(forKey: kIsLoggedIn)
             }
         }
     }
@@ -79,11 +77,11 @@ struct OnboardingPage: View {
         if firstName.isEmpty || lastName.isEmpty || email.isEmpty || !isValidEmail(email) {
             invalidInputAlert = true
         } else {
+            isLoggedIn = true
             UserDefaults.standard.set(firstName, forKey: kFirstName)
             UserDefaults.standard.set(lastName, forKey: kLastName)
             UserDefaults.standard.set(email, forKey: kEmail)
             UserDefaults.standard.set(isLoggedIn, forKey: kIsLoggedIn)
-            isLoggedIn = true
         }
     }
     
