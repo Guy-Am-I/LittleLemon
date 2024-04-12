@@ -12,7 +12,7 @@
 		78FB155C2BC83F01009C02EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78FB155B2BC83F01009C02EB /* Preview Assets.xcassets */; };
 		78FB155E2BC83F01009C02EB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB155D2BC83F01009C02EB /* Persistence.swift */; };
 		78FB15612BC83F01009C02EB /* Little_Lemon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78FB155F2BC83F01009C02EB /* Little_Lemon.xcdatamodeld */; };
-		78FB156B2BC9A751009C02EB /* RegistrationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB156A2BC9A751009C02EB /* RegistrationPage.swift */; };
+		78FB156B2BC9A751009C02EB /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB156A2BC9A751009C02EB /* OnboardingPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		78FB155B2BC83F01009C02EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		78FB155D2BC83F01009C02EB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		78FB15602BC83F01009C02EB /* Little_Lemon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Little_Lemon.xcdatamodel; sourceTree = "<group>"; };
-		78FB156A2BC9A751009C02EB /* RegistrationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPage.swift; sourceTree = "<group>"; };
+		78FB156A2BC9A751009C02EB /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		78FB15682BC9A6F1009C02EB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78FB156A2BC9A751009C02EB /* RegistrationPage.swift */,
+				78FB156A2BC9A751009C02EB /* OnboardingPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FB155E2BC83F01009C02EB /* Persistence.swift in Sources */,
-				78FB156B2BC9A751009C02EB /* RegistrationPage.swift in Sources */,
+				78FB156B2BC9A751009C02EB /* OnboardingPage.swift in Sources */,
 				78FB15612BC83F01009C02EB /* Little_Lemon.xcdatamodeld in Sources */,
 				78FB15552BC83EFF009C02EB /* Little_LemonApp.swift in Sources */,
 			);

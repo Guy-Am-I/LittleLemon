@@ -13,7 +13,7 @@ struct Little_LemonApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RegistrationPage()
+            OnboardingPage()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
