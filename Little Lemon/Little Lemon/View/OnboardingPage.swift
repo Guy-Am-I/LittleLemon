@@ -12,13 +12,18 @@ let kLastName = "KeyLastName"
 let kEmail = "KeyEmail"
 
 struct OnboardingPage: View {
+    @State var isLoggedIn = false
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var email: String = ""
     @State private var invalidInputAlert: Bool = false
     
     var body: some View {
+        NavigationView {
             VStack {
+                NavigationLink(destination: HomePage(), isActive: $isLoggedIn) {
+                    EmptyView()
+                }
                 Image(.littleLemonLogoTitle)
                     .resizable()
                     .scaledToFit()
@@ -60,6 +65,7 @@ struct OnboardingPage: View {
                 Spacer()
             }
             .padding([.leading, .trailing])
+        }
     }
     
     func verifyDetails() -> Void {
@@ -69,6 +75,7 @@ struct OnboardingPage: View {
             UserDefaults.standard.set(firstName, forKey: kFirstName)
             UserDefaults.standard.set(lastName, forKey: kLastName)
             UserDefaults.standard.set(email, forKey: kEmail)
+            isLoggedIn = true
         }
     }
     
