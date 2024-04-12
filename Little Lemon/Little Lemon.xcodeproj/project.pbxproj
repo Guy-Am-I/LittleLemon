@@ -17,6 +17,10 @@
 		78FB15712BC9C89C009C02EB /* UserProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB15702BC9C89C009C02EB /* UserProfilePage.swift */; };
 		78FB15742BC9D03D009C02EB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB15722BC9D03D009C02EB /* Persistence.swift */; };
 		78FB15752BC9D03D009C02EB /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB15732BC9D03D009C02EB /* FetchedObjects.swift */; };
+		78FB15772BC9DBB8009C02EB /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB15762BC9DBB8009C02EB /* MenuList.swift */; };
+		78FB15792BC9DBDE009C02EB /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB15782BC9DBDE009C02EB /* MenuItem.swift */; };
+		78FB157B2BC9F2E7009C02EB /* RestaurantInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB157A2BC9F2E7009C02EB /* RestaurantInfo.swift */; };
+		78FB157D2BC9F45D009C02EB /* DishItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB157C2BC9F45D009C02EB /* DishItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		78FB15702BC9C89C009C02EB /* UserProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePage.swift; sourceTree = "<group>"; };
 		78FB15722BC9D03D009C02EB /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		78FB15732BC9D03D009C02EB /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		78FB15762BC9DBB8009C02EB /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
+		78FB15782BC9DBDE009C02EB /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		78FB157A2BC9F2E7009C02EB /* RestaurantInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfo.swift; sourceTree = "<group>"; };
+		78FB157C2BC9F45D009C02EB /* DishItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,8 @@
 			children = (
 				78FB15732BC9D03D009C02EB /* FetchedObjects.swift */,
 				78FB15722BC9D03D009C02EB /* Persistence.swift */,
+				78FB15762BC9DBB8009C02EB /* MenuList.swift */,
+				78FB15782BC9DBDE009C02EB /* MenuItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +108,8 @@
 				78FB156C2BC9C470009C02EB /* HomePage.swift */,
 				78FB156E2BC9C4AD009C02EB /* MenuPage.swift */,
 				78FB15702BC9C89C009C02EB /* UserProfilePage.swift */,
+				78FB157A2BC9F2E7009C02EB /* RestaurantInfo.swift */,
+				78FB157C2BC9F45D009C02EB /* DishItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,11 +194,15 @@
 				78FB156D2BC9C470009C02EB /* HomePage.swift in Sources */,
 				78FB15742BC9D03D009C02EB /* Persistence.swift in Sources */,
 				78FB156B2BC9A751009C02EB /* OnboardingPage.swift in Sources */,
+				78FB157B2BC9F2E7009C02EB /* RestaurantInfo.swift in Sources */,
+				78FB157D2BC9F45D009C02EB /* DishItem.swift in Sources */,
 				78FB15612BC83F01009C02EB /* Little_Lemon.xcdatamodeld in Sources */,
 				78FB15712BC9C89C009C02EB /* UserProfilePage.swift in Sources */,
 				78FB15552BC83EFF009C02EB /* Little_LemonApp.swift in Sources */,
 				78FB156F2BC9C4AD009C02EB /* MenuPage.swift in Sources */,
+				78FB15772BC9DBB8009C02EB /* MenuList.swift in Sources */,
 				78FB15752BC9D03D009C02EB /* FetchedObjects.swift in Sources */,
+				78FB15792BC9DBDE009C02EB /* MenuItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

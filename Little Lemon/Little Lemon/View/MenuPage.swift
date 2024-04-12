@@ -8,16 +8,32 @@
 import SwiftUI
 
 struct MenuPage: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    let categories = ["Starters", "Mains", "Desserts"]
     var body: some View {
         VStack {
-            Text("Title")
-            Text("Vancouver")
-            Text("Description")
-            List(content: {})
+            RestaurantInfo()
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(categories, id: \.self) {
+                        Text($0)
+                    }
+                }
+            }
+            FetchedObjects() { (dishes : [Dish]) in
+                List {
+                    ForEach(dishes) { dish in
+                        DishItem(dish: dish)
+                    }
+                }
+            }
+        }
+        .onAppear() {
+            MenuList.getMenuData(viewContext: viewContext)
         }
     }
 }
 
 #Preview {
-    MenuPage()
+    MenuPage().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
 }
