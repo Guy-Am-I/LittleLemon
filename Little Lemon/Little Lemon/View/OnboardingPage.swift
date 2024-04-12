@@ -10,9 +10,11 @@ import SwiftUI
 let kFirstName = "KeyFirstName"
 let kLastName = "KeyLastName"
 let kEmail = "KeyEmail"
+let kIsLoggedIn = "KeyIsLoggedIn"
 
 struct OnboardingPage: View {
     @State var isLoggedIn = false
+    
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var email: String = ""
@@ -65,6 +67,11 @@ struct OnboardingPage: View {
                 Spacer()
             }
             .padding([.leading, .trailing])
+            .onAppear() {
+                if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
+                    isLoggedIn = true
+                }
+            }
         }
     }
     
@@ -75,6 +82,7 @@ struct OnboardingPage: View {
             UserDefaults.standard.set(firstName, forKey: kFirstName)
             UserDefaults.standard.set(lastName, forKey: kLastName)
             UserDefaults.standard.set(email, forKey: kEmail)
+            UserDefaults.standard.set(isLoggedIn, forKey: kIsLoggedIn)
             isLoggedIn = true
         }
     }

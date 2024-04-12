@@ -15,6 +15,7 @@
 		78FB156B2BC9A751009C02EB /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB156A2BC9A751009C02EB /* OnboardingPage.swift */; };
 		78FB156D2BC9C470009C02EB /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB156C2BC9C470009C02EB /* HomePage.swift */; };
 		78FB156F2BC9C4AD009C02EB /* MenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB156E2BC9C4AD009C02EB /* MenuPage.swift */; };
+		78FB15712BC9C89C009C02EB /* UserProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB15702BC9C89C009C02EB /* UserProfilePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		78FB156A2BC9A751009C02EB /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		78FB156C2BC9C470009C02EB /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		78FB156E2BC9C4AD009C02EB /* MenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPage.swift; sourceTree = "<group>"; };
+		78FB15702BC9C89C009C02EB /* UserProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				78FB156A2BC9A751009C02EB /* OnboardingPage.swift */,
 				78FB156C2BC9C470009C02EB /* HomePage.swift */,
 				78FB156E2BC9C4AD009C02EB /* MenuPage.swift */,
+				78FB15702BC9C89C009C02EB /* UserProfilePage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				78FB155E2BC83F01009C02EB /* Persistence.swift in Sources */,
 				78FB156B2BC9A751009C02EB /* OnboardingPage.swift in Sources */,
 				78FB15612BC83F01009C02EB /* Little_Lemon.xcdatamodeld in Sources */,
+				78FB15712BC9C89C009C02EB /* UserProfilePage.swift in Sources */,
 				78FB15552BC83EFF009C02EB /* Little_LemonApp.swift in Sources */,
 				78FB156F2BC9C4AD009C02EB /* MenuPage.swift in Sources */,
 			);

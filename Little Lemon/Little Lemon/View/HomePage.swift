@@ -14,6 +14,10 @@ struct HomePage: View {
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                 }
+            UserProfilePage()
+                .tabItem {
+                    Label("Profile", systemImage: "square.and.pencil")
+                }
         }
         .navigationBarBackButtonHidden(true)
     }
