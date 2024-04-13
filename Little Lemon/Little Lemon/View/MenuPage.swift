@@ -23,7 +23,7 @@ struct MenuPage: View {
                     }
                 }.padding(.leading, 20)
             }
-            FetchedObjects() { (dishes : [Dish]) in
+            FetchedObjects(sortDescriptors: buildSortDescriptors()) { (dishes : [Dish]) in
                 List {
                     ForEach(dishes) { dish in
                         DishItem(dish: dish)
@@ -34,6 +34,12 @@ struct MenuPage: View {
         .onAppear() {
             MenuList.getMenuData(viewContext: viewContext)
         }
+    }
+    
+    func buildSortDescriptors() -> [NSSortDescriptor] {
+        return [
+            NSSortDescriptor(key: "title", ascending: true, selector: #selector(NSString.localizedStandardCompare))
+        ]
     }
 }
 
