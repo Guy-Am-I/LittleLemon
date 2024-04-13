@@ -24,7 +24,7 @@ struct RestaurantInfo: View {
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
                     
-                    Text("Description,Description. Description. Description. Description.")
+                    Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist")
                 }
                 Image("lemon-dish")
                     .resizable()
@@ -32,7 +32,7 @@ struct RestaurantInfo: View {
                     .aspectRatio(contentMode: .fill)
             }
             .padding(.top, 50)
-            .padding(.trailing, 10)
+            .padding([.leading, .trailing], 10)
         }
         .frame(width: .infinity, height: 300)
     }

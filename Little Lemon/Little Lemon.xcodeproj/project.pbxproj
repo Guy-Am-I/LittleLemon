@@ -71,7 +71,6 @@
 		78FB15532BC83EFF009C02EB /* Little Lemon */ = {
 			isa = PBXGroup;
 			children = (
-				78FB15692BC9A6F8009C02EB /* Controller */,
 				78FB15682BC9A6F1009C02EB /* View */,
 				78FB15672BC9A6EA009C02EB /* Model */,
 				78FB15542BC83EFF009C02EB /* Little_LemonApp.swift */,
@@ -112,13 +111,6 @@
 				78FB157C2BC9F45D009C02EB /* DishItem.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		78FB15692BC9A6F8009C02EB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

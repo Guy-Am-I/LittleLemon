@@ -27,7 +27,7 @@ struct MenuPage: View {
                 Image(systemName: "magnifyingglass")
                 TextField("Search menu", text: $searchText)
             }.padding(5)
-            FetchedObjects(sortDescriptors: buildSortDescriptors()) { (dishes : [Dish]) in
+            FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes : [Dish]) in
                 List {
                     ForEach(dishes) { dish in
                         DishItem(dish: dish)
@@ -44,6 +44,12 @@ struct MenuPage: View {
         return [
             NSSortDescriptor(key: "title", ascending: true, selector: #selector(NSString.localizedStandardCompare))
         ]
+    }
+    
+    func buildPredicate() -> NSPredicate {
+        return searchText.isEmpty ?
+        NSPredicate(value: true) :
+        NSPredicate(format: "title CONTAINS[cd] %@", searchText)
     }
 }
 
