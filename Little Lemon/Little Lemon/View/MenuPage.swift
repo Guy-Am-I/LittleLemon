@@ -10,9 +10,9 @@ import SwiftUI
 struct MenuPage: View {
     @Environment(\.managedObjectContext) private var viewContext
     let categories = ["Starters", "Mains", "Desserts"]
-    
+    @State var searchText = ""
     var body: some View {
-        VStack {
+        VStack() {
             RestaurantInfo()
             ScrollView(.horizontal) {
                 HStack {
@@ -23,12 +23,16 @@ struct MenuPage: View {
                     }
                 }.padding(.leading, 20)
             }
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Search menu", text: $searchText)
+            }.padding(5)
             FetchedObjects(sortDescriptors: buildSortDescriptors()) { (dishes : [Dish]) in
                 List {
                     ForEach(dishes) { dish in
                         DishItem(dish: dish)
                     }
-                }
+                }.listStyle(.plain)
             }
         }
         .onAppear() {

@@ -34,6 +34,7 @@ struct RestaurantInfo: View {
             .padding(.top, 50)
             .padding(.trailing, 10)
         }
+        .frame(width: .infinity, height: 300)
     }
 }
 
