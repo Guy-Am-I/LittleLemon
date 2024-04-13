@@ -10,15 +10,18 @@ import SwiftUI
 struct MenuPage: View {
     @Environment(\.managedObjectContext) private var viewContext
     let categories = ["Starters", "Mains", "Desserts"]
+    
     var body: some View {
         VStack {
             RestaurantInfo()
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(categories, id: \.self) {
-                        Text($0)
+                        Button($0) {}
+                            .buttonStyle(.borderedProminent)
+                            .tint(.green)
                     }
-                }
+                }.padding(.leading, 20)
             }
             FetchedObjects() { (dishes : [Dish]) in
                 List {
