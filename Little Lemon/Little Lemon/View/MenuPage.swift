@@ -9,19 +9,23 @@ import SwiftUI
 
 struct MenuPage: View {
     @Environment(\.managedObjectContext) private var viewContext
-    let categories = ["Starters", "Mains", "Desserts"]
+    let categories = ["Starters", "Mains", "Desserts", "Drinks"]
     @State var searchText = ""
+    @State var showAlert = false
+    
     var body: some View {
         VStack() {
             RestaurantInfo()
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(categories, id: \.self) {
-                        Button($0) {}
+                        Button($0) {showAlert = true}
                             .buttonStyle(.borderedProminent)
-                            .tint(.green)
+                            .background()
+                            .padding(.leading, 5)
+                            .alert("Sorting is optional :)", isPresented: $showAlert) {Button("OK"){}}
                     }
-                }.padding(.leading, 20)
+                }.padding(.leading, 15)
             }
             HStack {
                 Image(systemName: "magnifyingglass")

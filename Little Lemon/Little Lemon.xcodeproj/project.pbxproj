@@ -21,6 +21,7 @@
 		78FB15792BC9DBDE009C02EB /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB15782BC9DBDE009C02EB /* MenuItem.swift */; };
 		78FB157B2BC9F2E7009C02EB /* RestaurantInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB157A2BC9F2E7009C02EB /* RestaurantInfo.swift */; };
 		78FB157D2BC9F45D009C02EB /* DishItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB157C2BC9F45D009C02EB /* DishItem.swift */; };
+		78FB157F2BCA1241009C02EB /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB157E2BCA1241009C02EB /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		78FB15782BC9DBDE009C02EB /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		78FB157A2BC9F2E7009C02EB /* RestaurantInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfo.swift; sourceTree = "<group>"; };
 		78FB157C2BC9F45D009C02EB /* DishItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishItem.swift; sourceTree = "<group>"; };
+		78FB157E2BCA1241009C02EB /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				78FB15702BC9C89C009C02EB /* UserProfilePage.swift */,
 				78FB157A2BC9F2E7009C02EB /* RestaurantInfo.swift */,
 				78FB157C2BC9F45D009C02EB /* DishItem.swift */,
+				78FB157E2BCA1241009C02EB /* Header.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FB156D2BC9C470009C02EB /* HomePage.swift in Sources */,
+				78FB157F2BCA1241009C02EB /* Header.swift in Sources */,
 				78FB15742BC9D03D009C02EB /* Persistence.swift in Sources */,
 				78FB156B2BC9A751009C02EB /* OnboardingPage.swift in Sources */,
 				78FB157B2BC9F2E7009C02EB /* RestaurantInfo.swift in Sources */,
@@ -323,8 +327,7 @@
 		78FB15652BC83F01009C02EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = primaryColorGreen;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Little Lemon/Preview Content\"";
@@ -352,8 +355,7 @@
 		78FB15662BC83F01009C02EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = primaryColorGreen;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Little Lemon/Preview Content\"";

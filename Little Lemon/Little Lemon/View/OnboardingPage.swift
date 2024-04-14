@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-let kFirstName = "KeyFirstName"
-let kLastName = "KeyLastName"
-let kEmail = "KeyEmail"
 let kIsLoggedIn = "KeyIsLoggedIn"
 
 struct OnboardingPage: View {
@@ -26,13 +23,8 @@ struct OnboardingPage: View {
                 NavigationLink(destination: HomePage(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
-                Image(.littleLemonLogoTitle)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 500, height: 300)
-                Text("Welcome to Little Lemon Restaurant")
-                    .font(.title)
-                    .fontWeight(.bold)
+                Header()
+                RestaurantInfo()
                 Text("Please Sign Up below")
                     .font(.subheadline)
                     .padding(.top, 30)
@@ -66,7 +58,6 @@ struct OnboardingPage: View {
                 .cornerRadius(100)
                 Spacer()
             }
-            .padding([.leading, .trailing])
             .onAppear() {
                 isLoggedIn = UserDefaults.standard.bool(forKey: kIsLoggedIn)
             }
