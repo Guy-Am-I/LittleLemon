@@ -14,10 +14,10 @@ let kPhoneNumber = "KeyPhoneNumber"
 
 struct UserProfilePage: View {
     @Environment(\.presentationMode) var presentation
-    @State var firstNameForm: String = ""
-    @State var lastNameForm: String = ""
-    @State var emailForm: String = ""
-    @State var phoneNumberForm: String = ""
+    @State var firstName: String = ""
+    @State var lastName: String = ""
+    @State var email: String = ""
+    @State var phoneNumber: String = ""
     @State var test = false
     
     let userFirstName = UserDefaults.standard.string(forKey: kFirstName) ?? ""
@@ -29,10 +29,10 @@ struct UserProfilePage: View {
         VStack {
             AvatarImageSection()
             Divider()
-            InputField(label: "First Name", value: userFirstName,  formField: $firstNameForm)
-            InputField(label: "Last Name", value: userLastName, formField: $lastNameForm)
-            InputField(label: "Email", value: userEmail, formField: $emailForm)
-            InputField(label: "Phone Number", value: userPhoneNumber,  formField: $phoneNumberForm)
+            InputField(label: "First Name", value: userFirstName,  formField: $firstName)
+            InputField(label: "Last Name", value: userLastName, formField: $lastName)
+            InputField(label: "Email", value: userEmail, formField: $email)
+            InputField(label: "Phone Number", value: userPhoneNumber,  formField: $phoneNumber)
             NotificationsForm()
             Button {
                 UserDefaults.standard.set(false, forKey: kIsLoggedIn)
@@ -49,11 +49,18 @@ struct UserProfilePage: View {
                 Button("Discard Changes") {}
                     .buttonStyle(.bordered)
                     .background()
-                Button("Save Changes") {}
+                Button("Save Changes") {saveProfileChanges()}
                     .buttonStyle(.borderedProminent)
                     .background()
             }.padding()
         }.padding()
+    }
+    
+    func saveProfileChanges() {
+        UserDefaults.standard.set(firstName, forKey: kFirstName)
+        UserDefaults.standard.set(lastName, forKey: kLastName)
+        UserDefaults.standard.set(email, forKey: kEmail)
+        UserDefaults.standard.set(phoneNumber, forKey: kPhoneNumber)
     }
 }
 
@@ -89,7 +96,7 @@ struct InputField: View {
         VStack(alignment: .leading) {
             Text(label)
                 .font(.footnote)
-            TextField("", text: formField)
+            TextField(value, text: formField)
                 .font(.system(size: 17, weight: .thin))
                 .frame(height: 30)
                 .overlay(
