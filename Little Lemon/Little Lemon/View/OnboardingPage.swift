@@ -23,7 +23,6 @@ struct OnboardingPage: View {
                 NavigationLink(destination: HomePage(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
-                Header()
                 RestaurantInfo()
                 Text("Please Sign Up below")
                     .font(.subheadline)
@@ -58,6 +57,14 @@ struct OnboardingPage: View {
                 .cornerRadius(100)
                 Spacer()
             }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear() {
                 isLoggedIn = UserDefaults.standard.bool(forKey: kIsLoggedIn)
             }

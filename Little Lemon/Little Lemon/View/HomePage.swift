@@ -9,12 +9,34 @@ import SwiftUI
 
 struct HomePage: View {
     let persistence = PersistenceController.shared
+    @State var goToProfile = false
     
     var body: some View {
-        VStack {
-            Header()
-            MenuPage()
-                .environment(\.managedObjectContext, persistence.container.viewContext)
+        NavigationView {
+            VStack {
+                MenuPage()
+                    .environment(\.managedObjectContext, persistence.container.viewContext)
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(destination: UserProfilePage(), isActive: $goToProfile) {
+                        Button {
+                            self.goToProfile = true
+                        } label: {
+                        Image("profile")
+                            .resizable()
+                            .aspectRatio( contentMode: .fit)
+                            .clipShape(Circle())
+                        }
+                    }
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
         }
         .navigationBarBackButtonHidden(true)
     }

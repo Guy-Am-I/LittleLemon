@@ -18,6 +18,7 @@ struct UserProfilePage: View {
     @State var lastNameForm: String = ""
     @State var emailForm: String = ""
     @State var phoneNumberForm: String = ""
+    @State var test = false
     
     let userFirstName = UserDefaults.standard.string(forKey: kFirstName) ?? ""
     let userLastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
@@ -26,13 +27,13 @@ struct UserProfilePage: View {
     
     var body: some View {
         VStack {
-            Header()
             AvatarImageSection()
             Divider()
             InputField(label: "First Name", value: userFirstName,  formField: $firstNameForm)
             InputField(label: "Last Name", value: userLastName, formField: $lastNameForm)
             InputField(label: "Email", value: userEmail, formField: $emailForm)
             InputField(label: "Phone Number", value: userPhoneNumber,  formField: $phoneNumberForm)
+            NotificationsForm()
             Button {
                 UserDefaults.standard.set(false, forKey: kIsLoggedIn)
                 self.presentation.wrappedValue.dismiss()
@@ -40,12 +41,18 @@ struct UserProfilePage: View {
                 Text(("Logout"))
                     .frame(maxWidth: .infinity)
             }
-            .padding()
+            .padding(10)
             .clipShape(Capsule())
             .background(Color.yellow)
-            .cornerRadius(50)
-            
-            Spacer()
+            .cornerRadius(10)
+            HStack {
+                Button("Discard Changes") {}
+                    .buttonStyle(.bordered)
+                    .background()
+                Button("Save Changes") {}
+                    .buttonStyle(.borderedProminent)
+                    .background()
+            }.padding()
         }.padding()
     }
 }
@@ -59,7 +66,7 @@ struct AvatarImageSection: View {
                 Image("profile-image-placeholder")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(maxHeight: 100)
+                    .frame(height: 50)
                     .clipShape(Circle())
             }
             Button("Change") {}
@@ -81,14 +88,43 @@ struct InputField: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(label)
-                .font(.subheadline)
+                .font(.footnote)
             TextField("", text: formField)
                 .font(.system(size: 17, weight: .thin))
-                .frame(height: 44)
+                .frame(height: 30)
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
                         .stroke(Color.gray, lineWidth: 0.5)
                 )
+        }.padding(.bottom)
+    }
+}
+
+struct NotifOption: Identifiable {
+    let id: String
+    var isFollowing: Bool = false
+}
+
+struct NotificationsForm: View {
+    @State var notifications = [
+        NotifOption(id: "Order Statuses"),
+        NotifOption(id: "Password Changes"),
+        NotifOption(id: "Special Offers"),
+        NotifOption(id: "Newsletter")]
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Email notifications")
+                .font(.subheadline)
+                .foregroundColor(.primaryColorGreen)
+            VStack {
+                ForEach($notifications) { $notif in
+                    Toggle(notif.id, isOn: $notif.isFollowing)
+                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+                }
+                .font(.caption)
+                .foregroundColor(.primaryColorGreen)
+            }
         }
     }
 }
